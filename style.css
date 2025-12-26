@@ -1,0 +1,400 @@
+/* ========================================
+   Importação da Fonte Externa
+   ======================================== */
+/* Fonte 'Raleway' importada do Google Fonts,
+   abrangendo todas as variações de peso e itálico */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ========================================
+   Reset e Estilos Globais
+   ======================================== */
+* {
+  font-family: "Raleway", sans-serif; /* Fonte padrão para todo o documento */
+  font-weight: normal;
+  font-size: 1.25rem;                 /* Base maior para acessibilidade */
+  box-sizing: border-box;            /* Padding e bordas contam no tamanho total */
+  margin: 0;                         /* Reset de margin para padronização */
+  padding: 0;                        /* Reset de padding */
+  text-decoration: none;             /* Remove sublinhados, etc. */
+  list-style: none;                  /* Remove marcadores de listas */
+  background-color: black;           /* Fundo escuro para tema moderno */
+  color: #f0f8ff;                   /* Cor clara para contraste e leitura */
+}
+
+
+/* ========================================
+   Footer - Rodapé da Página
+   ======================================== */
+footer {
+  padding: 60px 0;                   /* Espaçamento interno confortável */
+  text-align: center;                /* Centraliza conteúdo */
+  background-image: linear-gradient(rgba(50,168,219,0), rgba(50, 168, 219, 0.2)); /* Degradê sutil */
+  border-top: 1px solid #33A8DB;    /* Linha superior para demarcação */
+  position: relative;                /* Para controle de z-index */
+  z-index: 5;                       /* Empilha acima do fundo */
+}
+
+footer img {
+  width: 20em;                      /* Largura fixa, responsiva até 90vw */
+  max-width: 90vw;
+  height: auto;                    /* Manter proporção da imagem */
+}
+
+footer p {
+  background-color: transparent;   /* Sem fundo para melhor integração */
+  font-size: 1rem;                 /* Texto legível */
+  margin-top: 1em;                 /* Espaço acima do texto */
+  color: #d0d7dd;                 /* Cor suave para contraste com fundo */
+}
+
+footer a {
+  color: #33A8DB;                  /* Azul chamativo para links */
+  font-weight: bold;               /* Destaque */
+  cursor: pointer;                /* Indicação de clicável */
+  position: relative;
+  z-index: 10;                    /* Garante interatividade */
+  transition: color 0.3s ease;    /* Transição suave para hover */
+}
+
+footer a:hover,
+footer a:focus {
+  color: #57b9fc;                 /* Cor de link ao passar o mouse ou focar */
+  outline: none;                 /* Remove foco padrão para customização */
+}
+
+section {
+  margin-top: 3em;    /* Espaço acima de cada seção */
+  margin-bottom: 3em; /* Espaço abaixo de cada seção */
+}
+
+/* ========================================
+   Banner Principal
+   ======================================== */
+.banner {
+  display: flex;
+  justify-content: center;        /* Centraliza horizontalmente */
+  align-items: center;            /* Centraliza verticalmente */
+  height: 600px;                  /* Altura fixa para impacto visual */
+  padding: 25px 0 200px 0;        /* Espaçamento vertical */
+  border-bottom: 1px solid #33a8db80; /* Borda sutil degradê */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(178, 223, 242, 0.2), rgba(0, 0, 0, 0.6)), /* Degradê sobreposto */
+    url('assets/images/banner.png'); /* Imagem de fundo */
+  background-size: cover;          /* Cobre toda área */
+  background-repeat: no-repeat;
+  position: relative;              /* Empilhamento */
+  z-index: 0;                     /* Fica atrás do conteúdo */
+}
+
+.banner-content {
+  background-color: transparent; /* Sem fundo */
+  color: #fff;                   /* Texto branco para contraste */
+  margin: auto;                  /* Centraliza conteúdo */
+  text-align: center;            /* Texto alinhado ao centro */
+  position: relative;            /* Empilhamento */
+  z-index: 10;                  /* Conteúdo acima do fundo */
+  max-width: 600px;             /* Limita largura para leitura confortável */
+}
+
+/* Logo circular no banner */
+.banner-content .logo {
+  background-color: rgba(0, 0, 0, 0.2);  /* Fundo levemente transparente */
+  border-radius: 50%;                  /* Torna a logo circular */
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 20px auto;            /* Centraliza e distancia do conteúdo */
+  padding: 16px;                       /* Espaçamento interno */
+}
+
+/* Imagem dentro da logo para adaptação */
+.banner-content img {
+  background-color: transparent;
+  width: 100%;                       /* Ocupa todo espaço da logo */
+  height: 100%;
+  object-fit: contain;               /* Ajusta imagem mantendo proporção */
+  margin: 0 auto;
+}
+
+/* Título principal com efeito degradê */
+.banner-content h1 {
+  font-weight: 900;                 /* Muito negrito */
+  font-size: 2.5rem;                /* Tamanho grande */
+  text-transform: uppercase;        /* Letras maiúsculas */
+  background-image: linear-gradient(#3BA1CD, #1572B7); /* Degradê azul */
+  background-clip: text;             /* Aplica degradê ao texto */
+  color: transparent;               /* Texto transparente para efeito */
+  -webkit-background-clip: text;   /* Compatibilidade Safari */
+  margin-bottom: 0.75em;
+}
+
+/* Parágrafo do banner */
+.banner-content p {
+  margin: 1.5em 0.5em 0.9em;       /* Espaçamento externo confortável */
+  text-align: center;
+  max-width: 50rem;                /* Limite para leitura */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  color: #d0d7dd;                /* Cor suave */
+  line-height: 1.4;               /* Espaçamento entre linhas para legibilidade */
+}
+
+/* Estilo do botão no banner */
+.banner-content button {
+  background-color: transparent;                   /* Fundo transparente */
+  border: 2px solid transparent;
+  border-image: linear-gradient(#3ba1cd, #1572b7); /* Borda com degradê */
+  border-image-slice: 1;
+  color: #31a8dd;                                  /* Cor do texto botão */
+  letter-spacing: 4px;                            /* Espaçamento entre letras */
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em 2em;
+  text-transform: uppercase;                      /* Letras maiúsculas */
+  min-width: 10em;
+  cursor: pointer;                                /* Cursor para indicação clicável */
+  position: relative;
+  z-index: 11;                                    /* Acima de outros elementos para clique */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+.banner-content button:hover,
+.banner-content button:focus {
+  background-color: #31a8dd; /* Fundo azul para destaque */
+  color: black;
+  outline: none;
+}
+
+/* ========================================
+   Seção de Conteúdo dos Cursos e Desafios
+   ======================================== */
+#course-content, #professional-challenges {
+  flex: 1;                            /* Permite expansão */
+  text-align: center;
+  background-color: rgba(0,0,0,0.8); /* Fundo preto transparente para destaque */
+  padding: 3em 3em;
+  max-width: 960px;                  /* Limite largura para leitura */
+  margin: 0 auto 3em;
+}
+
+#course-content h2 {
+  color: #33A8DB;                   /* Título em azul */
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 4px;             /* Espaçamento entre caracteres para impacto */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+#course-content p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d0d7dd;                 /* Texto leve */
+  
+}
+
+/* Lista dos módulos */
+.modules-list {
+  display: flex;
+  flex-direction: column;          /* Itens em coluna */
+  align-items: center;
+  gap: 1em;                       /* Espaçamento entre módulos */
+}
+
+/* Estilo dos módulos individuais (botões) */
+.module {
+  background-color: #252525;       /* Fundo cinza escuro */
+  border: 1px solid #33A8DB;       /* Borda azul */
+  box-shadow: inset -5px 6px 8px rgba(0,0,0,0.7); /* Sombra interna para profundidade */
+  border-radius: 100px;            /* Bordas arredondadas para botão */
+  margin: 0 auto 1em;
+  padding: 16px;
+  width: 30em;
+  max-width: 90vw;                /* Responsivo */
+  color: #a4cbee;
+  font-size: 1rem;
+  cursor: default;                 /* Cursor padrão pois não é clicável */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito hover/focus nos módulos */
+.module:hover,
+.module:focus {
+  background-color: #33A8DB;      /* Fundo azul para destaque */
+  color: white;                   /* Texto branco no foco */
+}
+
+/* Estilo do texto dentro dos spans dos módulos */
+.modules-list div span {
+  background-color: transparent; /* Remove possíveis fundos indesejados */
+  color: #33A8DB;
+  font-weight: 600;              /* Negrito médio */
+}
+
+/* ========================================
+   Seção Transform World - Imagem de Fundo
+   ======================================== */
+#transform-world {
+  background-image: url('assets/images/woman-code.png'); /* Imagem motivacional */
+  height: 560px;
+  background-attachment: fixed;   /* Efeito “parallax” */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 1px solid #33A8DB;
+  border-bottom: 1px solid #33A8DB;
+  display: flex;                  /* Flexbox para alinhamento */
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3em;
+  color: white;
+  font-weight: 900;
+  font-size: 2.5em;
+  text-transform: lowercase;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#transform-world p {
+  max-width: 7em;
+  margin: 0;
+  text-shadow: 2px 1px #33A8DB; /* Sombra para leitura */
+  background-color: transparent;
+}
+
+/* ========================================
+   Seção Professional Challenges
+   ======================================== */
+#professional-challenges {
+  max-width: 960px;
+  margin: 0 auto 4em;
+  padding: 0 1em;
+  text-align: center;
+}
+
+#professional-challenges h2 {
+  font-size: 2em;
+  color: #33A8DB;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin: 0 auto 24px;
+}
+
+#professional-challenges img {
+  width: 80%;
+  max-width: 600px;
+  margin: 32px auto;
+  display: block;
+  border-radius: 12px;             /* Bordas arredondadas para suavizar */
+  box-shadow: 0 0 15px #33A8DBAA; /* Sombra azul sutil */
+}
+
+#professional-challenges p {
+  text-align: center;
+  font-size: 1rem;
+  color: #d0d7dd;
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ========================================
+   Estilos Responsivos - Adaptação para telas menores
+   ======================================== */
+@media screen and (max-width: 900px) {
+  /* Ajusta largura dos textos para melhor legibilidade */
+  #banner-content p,
+  #course-content p,
+  #professional-challenges p {
+    width: 90vw;
+  }
+
+  /* Reduz tamanho do título do banner */
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  /* Ajusta títulos das seções principais */
+  #course-content h2,
+  #professional-challenges h2 {
+    font-size: 1.5rem;
+    letter-spacing: 2.5px;
+  }
+
+  /* Ajusta largura dos módulos */
+  .module {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Layout mobile: largura total e textos centralizados para melhor experiência */
+  body, header, main, section, footer {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Ajuste dos parágrafos do banner para melhor visualização */
+  .banner-content p {
+    width: 90vw;
+    font-size: 1rem;
+    margin: 1em auto 1em auto;
+    line-height: 1.4;
+  }
+
+  /* Reduz tamanho da logo no banner */
+  .banner-content .logo {
+    width: 180px;
+    height: 180px;
+    padding: 12px;
+  }
+
+  /* Diminui título no banner */
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Lista de módulos muda para bloco vertical e responsivo */
+  .modules-list {
+    display: block;
+    padding: 0;
+  }
+
+  .modules-list .module {
+    width: 90vw;
+    padding: 10px;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+
+  /* Ajustes para o background fixo ficar adequado em mobile */
+  #transform-world {
+    background-attachment: scroll;
+    background-size: contain;
+    padding-left: 0.5em;
+  }
+
+  #transform-world p {
+    font-size: 1.5em;
+    max-width: 100%;
+    margin: 1em auto;
+    text-shadow: 2px 2px #33A8DB;
+  }
+
+  /* Ajuste das imagens na seção de desafios profissionais */
+  #professional-challenges img {
+    width: 90vw;
+    margin: 2em auto;
+  }
+
+  /* Ajustes no footer para telas pequenas */
+  footer {
+    padding: 30px 1em;
+  }
+
+  footer img {
+    width: 60vw;
+  }
+}
