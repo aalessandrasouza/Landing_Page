@@ -1,22 +1,27 @@
-# Desafio 01: Criando sua primeira Landing Page com HTML e CSS
+# Projet Landing Page - Renforcement des compétences HTML & CSS
 
-Bem vindo(a) ao primeiro desafio da Trilha de CSS da DIO! Nela, você vai construir sua primeira Landing Page com HTML e CSS, colocando em prática os fundamentos do CSS,
-as propriedades básicas da linguagem de estilização, além de trabalhar com as unidades de medidas relativas e absolutas que aprendemos ao longo da trilha.
+Ce projet fait partie de ma démarche personnelle pendant mes vacances universitaires, où je profite pour renforcer mes connaissances en HTML et CSS grâce à la formation de Digital Innovation One (DIO). 
 
-[Clique aqui](https://micheleambrosio.github.io/dio-trilha-css-desafio-01/) para acessar o resultado final da Landing Page criada a partir do desafio!
+## À propos du projet
 
-![image](https://user-images.githubusercontent.com/55519539/183538055-6cce606c-7d1d-4d15-a4be-ffeb5b37c956.png)
+Ce n'est pas mon premier projet, mais une occasion d'explorer plus avant les fondamentaux du CSS et d'améliorer la qualité visuelle et la responsivité de mes réalisations pour enrichir mon portfolio.
 
-Para você realizar o desafio, basta fazer um **fork** para o seu GitHub e começar a mexer no projeto.
-Dentro da pasta *main*, você vai encontrar todas as imagens e o arquivo HTML, contendo a estrutura básica da sua página, faltando apenas
-realizar a estilização da sua página. É necessário que você faça toda a parte responsável por interligar sua página HTML com suas folhas
-de estilo para que o resultado da estilização funcione.
+Dans ce projet, j'ai travaillé sur :
 
-[Link do Figma](https://www.figma.com/file/3PiokoJj9IhGDnNiWAJbz7/DIO---Desafio-01?node-id=2%3A6) contendo o protótipo do desafio para
-que você possa se basear.
+- La structuration d'une landing page simple avec HTML5 sémantique.
+- La création de styles modernes en CSS3, y compris la gestion des unités relatives et absolues.
+- L'application de dégradés sur le texte via les propriétés `background-clip` et `-webkit-background-clip` pour un rendu compatibilité multinéveau navigateurs.
+- La mise en place d'une interface responsive, adaptée aux mobiles et aux écrans larges.
+- L'utilisation du Flexbox pour un alignement flexible et un design fluide.
+- Le soin apporté au contraste des couleurs pour une bonne accessibilité.
 
-*Observações: para aplicar os textos em gradiente, utilize a propriedade CSS background-clip, porém, para funcionar em alguns navegadores,
-é necessário utilizar a propriedade -webkit-background-clip: text;*
+## Technologies et compétences développées
 
-Caso tenha alguma dúvida, ou queira comparar o resultado do desafio que você fez, nós temos o site finalizado na branch *final*. Basta alterar a branch do projeto
-utilizando o comando `git checkout final` no seu terminal.
+- **HTML5** - sémantique claire
+- **CSS3** - propriétés de style avancées et transitions
+- **Flexbox** - flexibilité dans le layout
+- **Responsivité** - media queries et flexibilité sur différentes tailles d'écran
+- **Bonnes pratiques** - réinitialisation CSS, organisation et maintenabilité du code
+
+## Pour visualiser le projet
+Découvrez le projet complet sur mon GitHub : [Landing Page - mon repository GitHub](https://github.com/aalessandrasouza/Landing_Page)
