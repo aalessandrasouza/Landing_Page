@@ -1,17 +1,12 @@
-/* ========================================
-   Importação da Fonte Externa
-   ======================================== */
-/* Fonte 'Raleway' importada do Google Fonts,
-   abrangendo todas as variações de peso e itálico */
+/* ======================================== Importação da Fonte Externa ======================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* ========================================
-   Reset e Estilos Globais
-   ======================================== */
+/* ======================================== Reset e Estilos Globais ======================================== */
 * {
   font-family: "Raleway", sans-serif; /* Fonte padrão para todo o documento */
   font-weight: normal;
-  font-size: 1.25rem;                 /* Base maior para acessibilidade */
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Tamanho base fluido para acessibilidade e responsividade */
   box-sizing: border-box;            /* Padding e bordas contam no tamanho total */
   margin: 0;                         /* Reset de margin para padronização */
   padding: 0;                        /* Reset de padding */
@@ -22,11 +17,9 @@
 }
 
 
-/* ========================================
-   Footer - Rodapé da Página
-   ======================================== */
+/* ========================================Footer - Rodapé da Página ======================================== */
 footer {
-  padding: 60px 0;                   /* Espaçamento interno confortável */
+  padding: clamp(2rem, 5vw, 4rem) 0; /* Espaçamento interno confortável e fluido */
   text-align: center;                /* Centraliza conteúdo */
   background-image: linear-gradient(rgba(50,168,219,0), rgba(50, 168, 219, 0.2)); /* Degradê sutil */
   border-top: 1px solid #33A8DB;    /* Linha superior para demarcação */
@@ -35,15 +28,15 @@ footer {
 }
 
 footer img {
-  width: 20em;                      /* Largura fixa, responsiva até 90vw */
+  width: clamp(10rem, 20vw, 20rem); /* Largura fluida, responsiva */
   max-width: 90vw;
   height: auto;                    /* Manter proporção da imagem */
 }
 
 footer p {
   background-color: transparent;   /* Sem fundo para melhor integração */
-  font-size: 1rem;                 /* Texto legível */
-  margin-top: 1em;                 /* Espaço acima do texto */
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Texto legível e fluido */
+  margin-top: 1rem;                /* Espaço acima do texto */
   color: #d0d7dd;                 /* Cor suave para contraste com fundo */
 }
 
@@ -63,25 +56,24 @@ footer a:focus {
 }
 
 section {
-  margin-top: 3em;    /* Espaço acima de cada seção */
-  margin-bottom: 3em; /* Espaço abaixo de cada seção */
+  margin-top: clamp(1.5rem, 3vw, 3rem);    /* Espaço acima de cada seção, fluido */
+  margin-bottom: clamp(1.5rem, 3vw, 3rem); /* Espaço abaixo de cada seção, fluido */
 }
 
-/* ========================================
-   Banner Principal
-   ======================================== */
+/* ======================================== Banner Principal ======================================== */
 .banner {
   display: flex;
   justify-content: center;        /* Centraliza horizontalmente */
   align-items: center;            /* Centraliza verticalmente */
-  height: 600px;                  /* Altura fixa para impacto visual */
-  padding: 25px 0 200px 0;        /* Espaçamento vertical */
+  min-height: 100vh;              /* Altura mínima da viewport para ocupar tela inteira */
+  padding: clamp(1rem, 5vw, 2rem) 0 clamp(5rem, 10vw, 8rem) 0; /* Espaçamento vertical fluido */
   border-bottom: 1px solid #33a8db80; /* Borda sutil degradê */
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(178, 223, 242, 0.2), rgba(0, 0, 0, 0.6)), /* Degradê sobreposto */
     url('assets/images/banner.png'); /* Imagem de fundo */
   background-size: cover;          /* Cobre toda área */
   background-repeat: no-repeat;
+  background-position: center;     /* Centraliza imagem */
   position: relative;              /* Empilhamento */
   z-index: 0;                     /* Fica atrás do conteúdo */
 }
@@ -93,17 +85,18 @@ section {
   text-align: center;            /* Texto alinhado ao centro */
   position: relative;            /* Empilhamento */
   z-index: 10;                  /* Conteúdo acima do fundo */
-  max-width: 600px;             /* Limita largura para leitura confortável */
+  max-width: clamp(300px, 80vw, 600px); /* Largura fluida para leitura confortável */
+  width: 100%;
 }
 
 /* Logo circular no banner */
 .banner-content .logo {
   background-color: rgba(0, 0, 0, 0.2);  /* Fundo levemente transparente */
   border-radius: 50%;                  /* Torna a logo circular */
-  width: 260px;
-  height: 260px;
-  margin: 0 auto 20px auto;            /* Centraliza e distancia do conteúdo */
-  padding: 16px;                       /* Espaçamento interno */
+  width: clamp(150px, 25vw, 260px);    /* Largura fluida */
+  height: clamp(150px, 25vw, 260px);   /* Altura fluida */
+  margin: 0 auto clamp(1rem, 2vw, 1.25rem) auto; /* Centraliza e distancia do conteúdo */
+  padding: clamp(0.5rem, 1vw, 1rem);   /* Espaçamento interno fluido */
 }
 
 /* Imagem dentro da logo para adaptação */
@@ -118,80 +111,78 @@ section {
 /* Título principal com efeito degradê */
 .banner-content h1 {
   font-weight: 900;                 /* Muito negrito */
-  font-size: 2.5rem;                /* Tamanho grande */
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Tamanho fluido */
   text-transform: uppercase;        /* Letras maiúsculas */
   background-image: linear-gradient(#3BA1CD, #1572B7); /* Degradê azul */
   background-clip: text;             /* Aplica degradê ao texto */
   color: transparent;               /* Texto transparente para efeito */
   -webkit-background-clip: text;   /* Compatibilidade Safari */
-  margin-bottom: 0.75em;
+  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
 }
 
 /* Parágrafo do banner */
 .banner-content p {
-  margin: 1.5em 0.5em 0.9em;       /* Espaçamento externo confortável */
+  margin: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 0.5rem) clamp(0.5rem, 1vw, 0.9rem); /* Espaçamento externo confortável */
   text-align: center;
-  max-width: 50rem;                /* Limite para leitura */
+  max-width: clamp(20rem, 90vw, 50rem); /* Limite fluido para leitura */
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;
   color: #d0d7dd;                /* Cor suave */
   line-height: 1.4;               /* Espaçamento entre linhas para legibilidade */
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Tamanho fluido */
 }
 
 /* Estilo do botão no banner */
-.banner-content button {
+.banner-content a {
   background-color: transparent;                   /* Fundo transparente */
   border: 2px solid transparent;
   border-image: linear-gradient(#3ba1cd, #1572b7); /* Borda com degradê */
   border-image-slice: 1;
   color: #31a8dd;                                  /* Cor do texto botão */
-  letter-spacing: 4px;                            /* Espaçamento entre letras */
-  font-size: 1em;
+  letter-spacing: clamp(2px, 0.5vw, 4px);         /* Espaçamento fluido entre letras */
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: bold;
-  padding: 0.5em 2em;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(1rem, 3vw, 2rem);
   text-transform: uppercase;                      /* Letras maiúsculas */
-  min-width: 10em;
+  min-width: clamp(8rem, 15vw, 10rem);
   cursor: pointer;                                /* Cursor para indicação clicável */
   position: relative;
   z-index: 11;                                    /* Acima de outros elementos para clique */
   transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
 }
 
-.banner-content button:hover,
-.banner-content button:focus {
+.banner-content a:hover,
+.banner-content a:focus {
   background-color: #31a8dd; /* Fundo azul para destaque */
   color: black;
   outline: none;
 }
 
-/* ========================================
-   Seção de Conteúdo dos Cursos e Desafios
-   ======================================== */
+/* ======================================== Seção de Conteúdo dos Cursos e Desafios ======================================== */
 #course-content, #professional-challenges {
   flex: 1;                            /* Permite expansão */
   text-align: center;
   background-color: rgba(0,0,0,0.8); /* Fundo preto transparente para destaque */
-  padding: 3em 3em;
-  max-width: 960px;                  /* Limite largura para leitura */
-  margin: 0 auto 3em;
+  padding: clamp(2rem, 5vw, 3rem);
+  max-width: clamp(600px, 90vw, 960px); /* Largura fluida */
+  margin: 0 auto clamp(1.5rem, 3vw, 3rem);
 }
 
 #course-content h2 {
   color: #33A8DB;                   /* Título em azul */
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
-  letter-spacing: 4px;             /* Espaçamento entre caracteres para impacto */
-  margin-bottom: 40px;
+  letter-spacing: clamp(2px, 0.5vw, 4px); /* Espaçamento fluido entre caracteres */
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   text-transform: uppercase;
 }
 
 #course-content p {
-  margin-bottom: 40px;
-  font-size: 1rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.5;
   color: #d0d7dd;                 /* Texto leve */
-  
 }
 
 /* Lista dos módulos */
@@ -199,7 +190,7 @@ section {
   display: flex;
   flex-direction: column;          /* Itens em coluna */
   align-items: center;
-  gap: 1em;                       /* Espaçamento entre módulos */
+  gap: clamp(0.5rem, 1vw, 1rem);  /* Espaçamento fluido entre módulos */
 }
 
 /* Estilo dos módulos individuais (botões) */
@@ -208,12 +199,12 @@ section {
   border: 1px solid #33A8DB;       /* Borda azul */
   box-shadow: inset -5px 6px 8px rgba(0,0,0,0.7); /* Sombra interna para profundidade */
   border-radius: 100px;            /* Bordas arredondadas para botão */
-  margin: 0 auto 1em;
-  padding: 16px;
-  width: 30em;
+  margin: 0 auto clamp(0.5rem, 1vw, 1rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
+  width: clamp(15rem, 80vw, 30rem); /* Largura fluida */
   max-width: 90vw;                /* Responsivo */
   color: #a4cbee;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   cursor: default;                 /* Cursor padrão pois não é clicável */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -232,12 +223,10 @@ section {
   font-weight: 600;              /* Negrito médio */
 }
 
-/* ========================================
-   Seção Transform World - Imagem de Fundo
-   ======================================== */
+/* ======================================== Seção Transform World - Imagem de Fundo ======================================== */
 #transform-world {
   background-image: url('assets/images/woman-code.png'); /* Imagem motivacional */
-  height: 560px;
+  min-height: clamp(300px, 50vh, 560px); /* Altura mínima fluida */
   background-attachment: fixed;   /* Efeito “parallax” */
   background-size: cover;
   background-position: center;
@@ -247,88 +236,91 @@ section {
   display: flex;                  /* Flexbox para alinhamento */
   align-items: center;
   justify-content: flex-start;
-  padding-left: 3em;
+  padding-left: clamp(1rem, 3vw, 3rem);
   color: white;
   font-weight: 900;
-  font-size: 2.5em;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   text-transform: lowercase;
   max-width: 100%;
   box-sizing: border-box;
 }
 
 #transform-world p {
-  max-width: 7em;
+  max-width: clamp(5rem, 50vw, 7rem);
   margin: 0;
   text-shadow: 2px 1px #33A8DB; /* Sombra para leitura */
   background-color: transparent;
 }
 
-/* ========================================
-   Seção Professional Challenges
-   ======================================== */
+/* ======================================== Seção Professional Challenges ======================================== */
 #professional-challenges {
-  max-width: 960px;
-  margin: 0 auto 4em;
-  padding: 0 1em;
+  max-width: clamp(600px, 90vw, 960px);
+  margin: 0 auto clamp(2rem, 4vw, 4rem);
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
   text-align: center;
 }
 
 #professional-challenges h2 {
-  font-size: 2em;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: #33A8DB;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: clamp(2px, 0.5vw, 4px);
   font-weight: bold;
-  margin: 0 auto 24px;
+  margin: 0 auto clamp(1rem, 2vw, 1.5rem);
 }
 
 #professional-challenges img {
-  width: 80%;
+  width: clamp(60%, 80vw, 80%);
   max-width: 600px;
-  margin: 32px auto;
+  margin: clamp(1.5rem, 3vw, 2rem) auto;
   display: block;
   border-radius: 12px;             /* Bordas arredondadas para suavizar */
   box-shadow: 0 0 15px #33A8DBAA; /* Sombra azul sutil */
+  height: auto;                    /* Manter proporção */
 }
 
 #professional-challenges p {
   text-align: center;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   color: #d0d7dd;
-  max-width: 860px;
+  max-width: clamp(400px, 90vw, 860px);
   margin: 0 auto;
   line-height: 1.5;
 }
 
-/* ========================================
-   Estilos Responsivos - Adaptação para telas menores
-   ======================================== */
-@media screen and (max-width: 900px) {
-  /* Ajusta largura dos textos para melhor legibilidade */
-  #banner-content p,
-  #course-content p,
-  #professional-challenges p {
-    width: 90vw;
+/* ======================================== Estilos Responsivos - Adaptação para telas menores ======================================== */
+
+/* Tablets e telas médias (~768px) */
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 80vh; /* Reduz altura para caber melhor */
+    padding: clamp(1rem, 3vw, 1.5rem) 0 clamp(3rem, 6vw, 5rem) 0;
   }
 
-  /* Reduz tamanho do título do banner */
-  .banner-content h1 {
-    font-size: 2rem;
+  .banner-content .logo {
+    width: clamp(120px, 20vw, 200px);
+    height: clamp(120px, 20vw, 200px);
   }
 
-  /* Ajusta títulos das seções principais */
-  #course-content h2,
-  #professional-challenges h2 {
-    font-size: 1.5rem;
-    letter-spacing: 2.5px;
+  .modules-list {
+    gap: clamp(0.5rem, 1vw, 0.75rem);
   }
 
-  /* Ajusta largura dos módulos */
   .module {
-    width: 90vw;
+    width: clamp(12rem, 85vw, 25rem);
+  }
+
+  #transform-world {
+    background-attachment: scroll; /* Remove parallax para melhor performance */
+    padding-left: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  #transform-world p {
+    max-width: clamp(4rem, 60vw, 6rem);
   }
 }
 
+/* Telas pequenas (~600px) */
 @media screen and (max-width: 600px) {
   /* Layout mobile: largura total e textos centralizados para melhor experiência */
   body, header, main, section, footer {
