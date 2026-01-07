@@ -245,7 +245,7 @@ section {
   box-sizing: border-box;
 }
 
-#transform-world h4 {
+#transform-world h3 {
   max-width: clamp(5rem, 50vw, 7rem);
   margin: 0;
   text-shadow: 2px 1px #33A8DB; /* Sombra para leitura */
